@@ -1,0 +1,12 @@
+<%= form_for @user do |f| %>
+  <p>
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </p>
+
+  <%= f.fields_for :preferences do |p| %>
+  <p>
+    <%= f.label :theme %><br>
+    <%= f.select :theme, User.valid_themes, { :include_blank => true } %>
+  </p>
+<% end %>

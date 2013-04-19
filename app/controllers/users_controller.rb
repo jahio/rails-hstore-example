@@ -11,11 +11,15 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     # TODO: Check params for SQL injection
-    if @user.valid and @user.save
+    if @user.valid? and @user.save
       redirect_to @user, :flash => { :notice => t(:user_created) }
     else
       render :action => :new, :flash => { :error => t(:user_not_created) }
     end
+  end
+
+  def show
+    @user = User.find(params[:id])
   end
 
   def edit
