@@ -15,4 +15,4 @@
 /tmp
 
 # Ignore .rbx dir
-.rbx
+/.rbx
