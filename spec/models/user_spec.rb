@@ -44,5 +44,11 @@ describe User do
         @user.save
       }.should change(User, :count).by(1)
     end
+
+    it "should have arrays for valid preferences" do
+      User.valid_languages.should_not be_blank
+      User.valid_currencies.should_not be_blank
+      User.valid_themes.should_not be_blank
+    end
   end
 end
