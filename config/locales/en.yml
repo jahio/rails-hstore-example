@@ -1,0 +1,9 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  hello: "Hello world"
+  user_created: "User successfully created."
+  user_not_created: "User could not be created."
+  user_updated: "User successfully updated."
+  user_not_updated: "User could not be updated."
