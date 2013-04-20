@@ -15,24 +15,17 @@
 
   <div class="navbar">
     <div class="navbar-inner">
-      <a class="brand" href="#">Rails PostgreSQL hstore Example</a>
+      <a class="brand" href="<%= root_path %>">Rails PostgreSQL hstore Example</a>
       <ul class="nav">
         <li><%= link_to "Users", users_path %></li>
         <li><a href="http://engageis.github.io/activerecord-postgres-hstore/">activerecord-postgres-hstore gem</a></li>
         <li><a href="http://www.postgresql.org/docs/9.2/static/hstore.html">Official PostgreSQL hstore documentation</a></li>
+        <li><a href="https://github.com/jaustinhughey/rails-hstore-example">Source Code</a></li>
       </ul>
     </div>
   </div>
 
-  <div class="alert alert-info">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-    Browse the source code for this app at <a href="https://github.com/jaustinhughey/rails-hstore-example">GitHub</a>.
-  </div>
-
-
-
 <%= yield %>
-
 
   </div>
 </body>
