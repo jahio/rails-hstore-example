@@ -19,3 +19,8 @@
 
 # Ignore database.yml
 /config/database.yml
+
+# App should be compatible with any 1.9 Ruby implementation;
+# Thus we can ignore the ruby-version and ruby-gemset files
+/.ruby-version
+/.ruby-gemset
