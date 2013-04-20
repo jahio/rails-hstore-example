@@ -9,8 +9,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
-    # TODO: Check params for SQL injection
+    @user = User.new(user_params)
     if @user.valid? and @user.save
       redirect_to @user, :flash => { :notice => t(:user_created) }
     else
@@ -28,7 +27,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update_attributes(params[:user])
+    if @user.update_attributes(user_params)
       redirect_to @user, :flash => { :notice => t(:user_updated) }
     else
       render :action => :new, :flash => { :error => t(:user_not_updated) }
@@ -43,4 +42,11 @@ class UsersController < ApplicationController
       redirect_to @user, :flash => { :error => t(:user_not_destroyed) }
     end
   end
+
+private
+
+  def user_params
+    params.require(:user).permit(:email, preferences: [:theme, :language, :currency])
+  end
+
 end
