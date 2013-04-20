@@ -1,5 +1,7 @@
 <h1>Users</h1>
 
+<%= link_to "Create New User", new_user_path, :class => "btn btn-primary" %>
+
 <ul>
 <% @users.each do |u| -%>
   <li><%= link_to u.email, u %></li>

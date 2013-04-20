@@ -6,7 +6,19 @@
 
   <%= f.fields_for :preferences do |p| %>
   <p>
-    <%= f.label :theme %><br>
-    <%= f.select :theme, User.valid_themes, { :include_blank => true } %>
+    <%= p.label :theme %><br>
+    <%= p.select :theme, options_for_select(User.valid_themes, @user.preferences["theme"]), { include_blank: true } %>
   </p>
+
+  <p>
+    <%= p.label :currency %><br>
+    <%= p.select :currency, options_for_select(User.valid_currencies, @user.preferences["currency"]), { include_blank: true } %>
+  </p>
+
+  <p>
+    <%= p.label :language %><br>
+    <%= p.select :language, options_for_select(User.valid_languages, @user.preferences["language"]), { include_blank: true } %>
+  </p>
+  <% end %>
+  <%= f.submit :class => "btn btn-success" %>
 <% end %>
