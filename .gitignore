@@ -16,3 +16,6 @@
 
 # Ignore .rbx dir
 /.rbx
+
+# Ignore database.yml
+/config/database.yml
